@@ -3,28 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notícias de Paulo Afonso</title>
+  <title>Sertão News – Paulo Afonso &amp; Delmiro Gouveia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Notícias de Paulo Afonso</h1>
-    <p>As últimas notícias e eventos do município de Paulo&nbsp;Afonso, BA.</p>
-  </header>
+  <!-- Navegação principal -->
+  <nav>
+    <a href="#paulo-afonso">Paulo&nbsp;Afonso</a>
+    <a href="#delmiro">Delmiro&nbsp;Gouveia</a>
+    <a href="#anuncie">Anuncie</a>
+  </nav>
+
+  <!-- Seção de destaque (hero) -->
+  <section class="hero">
+    <h1>Sertão News</h1>
+    <p>Notícias recentes de Paulo&nbsp;Afonso, BA e Delmiro Gouveia, AL</p>
+  </section>
+
   <main>
-    <article class="news-card">
-      <h2><a href="agosto-dourado.html">Agosto Dourado: Secretaria de Saúde intensifica ações de incentivo ao aleitamento materno</a></h2>
-      <p class="date">Publicado em 12/08/2025</p>
-      <p>Durante o mês de agosto, a Prefeitura de Paulo&nbsp;Afonso promove diversas atividades em alusão ao Agosto Dourado, campanha que simboliza a importância do aleitamento materno, com rodas de conversa e orientações a gestantes, puérperas e lactantes.</p>
-    </article>
-    <article class="news-card">
-      <h2><a href="conferencia-mulheres.html">Paulo Afonso sedia 5ª Conferência Territorial de Políticas para as Mulheres</a></h2>
-      <p class="date">Publicado em 12/08/2025</p>
-      <p>O município sediou a 5ª Conferência Territorial de Políticas para as Mulheres, reunindo lideranças e representantes do poder público e da sociedade civil para debater temas como democracia, igualdade de gênero e enfrentamento à violência.</p>
-    </article>
+    <!-- Notícias de Paulo Afonso -->
+    <section id="paulo-afonso">
+      <h2 class="section-title">Paulo Afonso</h2>
+      <div class="news-grid">
+        <!-- Nova notícia da Copa Vela 2025 -->
+        <article class="news-card">
+          <h3><a href="copa-vela-2025.html">Copa Vela 2025 terá nova sede e shows nacionais de 4 a 7 de setembro</a></h3>
+          <p class="date">Publicado em 12/08/2025</p>
+          <p>Maior festa de Paulo Afonso troca a avenida por Campo do Poeirão e Complexo&nbsp;dos&nbsp;Lagos. Atrações confirmadas incluem Simone Mendes, Wesley Safadão, Bell Marques e mais.</p>
+        </article>
+        <article class="news-card">
+          <h3><a href="agosto-dourado.html">Agosto Dourado: Secretaria de Saúde intensifica ações de incentivo ao aleitamento materno</a></h3>
+          <p class="date">Publicado em 12/08/2025</p>
+          <p>Durante o mês de agosto, a Prefeitura de Paulo&nbsp;Afonso promove diversas atividades em alusão ao Agosto Dourado, campanha que simboliza a importância do aleitamento materno, com rodas de conversa e orientações a gestantes, puérperas e lactantes.</p>
+        </article>
+        <article class="news-card">
+          <h3><a href="conferencia-mulheres.html">Paulo Afonso sedia 5ª Conferência Territorial de Políticas para as Mulheres</a></h3>
+          <p class="date">Publicado em 12/08/2025</p>
+          <p>O município sediou a 5ª Conferência Territorial de Políticas para as Mulheres, reunindo lideranças e representantes do poder público e da sociedade civil para debater temas como democracia, igualdade de gênero e enfrentamento à violência.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Notícias de Delmiro Gouveia -->
+    <section id="delmiro">
+      <h2 class="section-title">Delmiro Gouveia</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <h3><a href="eventos-delmiro.html">Delmiro Gouveia se prepara para um fim de semana movimentado com três grandes eventos</a></h3>
+          <p class="date">Publicado em 02/08/2025</p>
+          <p>Entre os dias 1º e 3 de agosto, o município recebe o Rally dos Sertões, o 4º MotoFest e o 16º Motocross, fortalecendo o turismo e a economia local.</p>
+        </article>
+        <article class="news-card">
+          <h3><a href="simulacao-ataque-delmiro.html">Delmiro Gouveia será palco de simulação de ataque criminoso em grande operação de segurança pública</a></h3>
+          <p class="date">Publicado em 31/07/2025</p>
+          <p>A Secretaria de Estado da Segurança Pública realizará um exercício simulado para testar a resposta das forças de segurança diante de ataques a instituições bancárias.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção de publicidade / anúncio -->
+    <section id="anuncie">
+      <h2 class="section-title">Publicidade local</h2>
+      <div class="ads-grid">
+        <div class="ad-card">
+          <img src="ad-shop.png" alt="Anuncie sua loja">
+          <h3>Anuncie sua loja</h3>
+          <p>Divulgue seus produtos para milhares de leitores do Sertão News e aumente suas vendas. Entre em contato para saber mais sobre nossos pacotes de publicidade.</p>
+        </div>
+        <div class="ad-card">
+          <img src="ad-restaurant.png" alt="Anuncie sua lanchonete">
+          <h3>Anuncie sua lanchonete</h3>
+          <p>Atraia novos clientes para seu restaurante ou lanchonete com nossos espaços exclusivos. Alcance um público regional qualificado e faça seu negócio crescer.</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Rodapé -->
   <footer>
-    <p>&copy; 2025 Notícias de Paulo&nbsp;Afonso. Site desenvolvido para demonstração.</p>
+    <p>&copy; 2025 Sertão News. Este site é um projeto demonstrativo.</p>
   </footer>
 </body>
 </html>
