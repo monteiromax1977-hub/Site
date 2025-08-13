@@ -1,184 +1,198 @@
 /*
- * Estilos básicos para o site de notícias de Paulo Afonso.
- * Este arquivo define a aparência de elementos como cabeçalho, cards de notícias e rodapé.
- */
+  Global styles for the Sertão News website.
+  The palette evokes the colours of the sertão: warm greens and fresh blues
+  combined with generous white space. Typography and spacing are kept simple
+  for readability on mobile and desktop.
+*/
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background: #f5f5f5;
+  background-color: #f7f7f7;
   color: #333;
+  line-height: 1.5;
 }
 
-/* Navegação principal */
-nav {
-  background: #333;
-  padding: 10px 20px;
+header {
+  background-color: #006d77;
+  color: #fff;
+}
+
+header .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+header nav a:hover {
+  color: #ffcb77;
 }
 
-/* Seção de destaque (hero) */
 .hero {
-  background-image: url('hero.png');
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  background: linear-gradient(90deg, #83c5be 0%, #eaf4f4 100%);
+  padding: 4rem 1rem;
   text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 3rem;
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
-  margin-top: 10px;
-  font-size: 1.2rem;
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+.cards {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.news-card {
-  background: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
 }
 
-/* Ajuste de tipografia para títulos de cards */
-.news-card h3 {
+.card h3 {
   margin-top: 0;
-  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
-.news-card a {
-  color: #1e88e5;
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #006d77;
+  color: #fff;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
-.news-card a:hover {
-  text-decoration: underline;
+.button:hover {
+  background-color: #004c50;
 }
 
-.news-card .date {
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 5px;
+.ads {
+  background-color: #edf6f9;
+  padding: 2rem 1rem;
+}
+
+.ads h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.ad-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ad {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px;
+  text-align: center;
 }
 
 footer {
-  background: #333;
+  background-color: #006d77;
   color: #fff;
   text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
+  padding: 1rem;
 }
 
-/* Seções */
-section {
-  margin-top: 40px;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #1e88e5;
-  display: inline-block;
-}
-
-/* Grid para distribuir cards em telas maiores */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-/* Estilo para artigos individuais */
-.news-article {
+/* Content and article styles for internal pages */
+main .content {
   max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.news-article h1 {
-  font-size: 2rem;
+main .content h2 {
   margin-top: 0;
 }
 
-.news-article .date {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 15px;
+main .content ul {
+  padding-left: 1.25rem;
 }
 
-.news-article p {
-  margin-bottom: 1em;
-  text-align: justify;
-  line-height: 1.6;
+main .content .citations {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 2rem;
 }
 
-/* Seção de anúncios */
-#anuncie {
-  margin-top: 60px;
+/* Recipe-specific layout */
+.recipe {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  align-items: flex-start;
 }
 
-.ads-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.recipe img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.ad-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.recipe .text {
+  flex: 1;
 }
 
-.ad-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 15px;
+.recipe h3 {
+  margin-top: 0;
 }
 
-.ad-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.3rem;
-  color: #1e88e5;
+.recipe ul,
+.recipe ol {
+  padding-left: 1.25rem;
 }
 
-.ad-card p {
-  font-size: 1rem;
-  color: #444;
+.recipe li {
+  margin-bottom: 0.4rem;
 }
