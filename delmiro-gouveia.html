@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<title>Delmiro Gouveia — Sertão News</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Delmiro Gouveia — Sertão News</title>
-<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="hero.svg"/>
+<meta name="color-scheme" content="light dark">
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const dark=html.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', dark?'dark':'light');
+  }
+  (function(){
+    const pref=localStorage.getItem('sertao-theme');
+    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
+  })();
+</script>
+
 </head>
-<body>
-<header class="header">
-  <h1>Delmiro Gouveia (AL)</h1>
-  <nav class="nav">
-    <a href="index.html">Início</a>
-    <a href="paulo-afonso.html">Paulo Afonso</a>
-    <a href="delmiro-gouveia.html">Delmiro Gouveia</a>
-    <a href="receitas.html">Receitas</a>
-  </nav>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
+    <nav class="flex gap-4 text-sm">
+      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
+      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+    </nav>
+    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+  </div>
 </header>
-<main class="container">
+<main class="max-w-4xl mx-auto px-4 py-8 space-y-6">
+  <article id="jogos-estudantis" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+    <h1 class="text-2xl font-bold">Jogos Estudantis voltam após mais de uma década</h1>
+    <p class="text-sm text-slate-500 mt-1">Publicado 11/08/2025 • Fonte: Tribuna Hoje</p>
+    <p class="mt-4">Cerca de 1.300 alunos da rede municipal participam do retorno dos jogos estudantis.</p>
+    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://tribunahoje.com/noticias/esportes/2025/08/11/163658-delmiro-gouveia-revive-os-jogos-estudantis-municipais-apos-mais-de-uma-decada">Ler a fonte</a>
+  </article>
 
-<article id="jogos-estudantis" class="article">
-  <h2>Jogos Estudantis voltam após mais de uma década</h2>
-  <p class="meta">Publicado: 11/08/2025 • Fonte: Tribuna Hoje</p>
-  <p>A prefeita anunciou o retorno dos Jogos Estudantis Municipais, envolvendo cerca de 1.300 alunos da rede.</p>
-  <p class="source"><a href="https://tribunahoje.com/noticias/esportes/2025/08/11/163658-delmiro-gouveia-revive-os-jogos-estudantis-municipais-apos-mais-de-uma-decada" target="_blank" rel="noopener">Ler a fonte</a></p>
-</article>
+  <article id="policia" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+    <h2 class="text-2xl font-bold">Ocorrências policiais — resumo</h2>
+    <p class="text-sm text-slate-500 mt-1">Publicado 11/08/2025 • Fonte: AL1/PM-AL</p>
+    <p class="mt-4">Prisões registradas no interior, incluindo Delmiro Gouveia; um homem de 69 anos foi preso por mandado judicial.</p>
+    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://al1.com.br/noticias/noticias/169010-pm-al-registra-prisoes-em-porto-real-do-colegio-penedo-delmiro-gouveia-e-mata-grande">Ler a fonte</a>
+  </article>
 
-<article id="policia" class="article">
-  <h2>Ocorrências policiais — resumo</h2>
-  <p class="meta">Publicado: 11/08/2025 • Fonte: AL1/PM-AL</p>
-  <p>PM-AL registrou prisões em cidades do interior, incluindo Delmiro Gouveia; um homem de 69 anos foi preso por mandado judicial.</p>
-  <p class="source"><a href="https://al1.com.br/noticias/noticias/169010-pm-al-registra-prisoes-em-porto-real-do-colegio-penedo-delmiro-gouveia-e-mata-grande" target="_blank" rel="noopener">Ler a fonte</a></p>
-</article>
-
-<article class="article">
-  <h2>Boletim local (manchetes)</h2>
-  <p class="meta">Atualizado: 12/08/2025 • Fonte: Correio Notícia</p>
-  <p>Resumo de ocorrências e trânsito na região de Delmiro Gouveia nas últimas horas.</p>
-  <p class="source"><a href="https://correionoticia.com.br/" target="_blank" rel="noopener">Ver manchetes</a></p>
-</article>
-
+  <article class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+    <h2 class="text-2xl font-bold">Boletim local (manchetes)</h2>
+    <p class="text-sm text-slate-500 mt-1">Atualizado 12/08/2025 • Fonte: Correio Notícia</p>
+    <p class="mt-4">Resumo de ocorrências e trânsito na região nas últimas horas.</p>
+    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://correionoticia.com.br/">Ver manchetes</a>
+  </article>
 </main>
-<footer class="footer">© 2025 Sertão News</footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
 </body>
 </html>

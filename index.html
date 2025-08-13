@@ -1,72 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
+<title>Sertão News — Paulo Afonso & Delmiro Gouveia</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sertão News — Paulo Afonso & Delmiro Gouveia</title>
-<link rel="stylesheet" href="style.css" />
-<meta name="description" content="Notícias de Paulo Afonso/BA e Delmiro Gouveia/AL, receitas baianas e anúncios locais. Atualizado diariamente.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="hero.svg"/>
+<meta name="color-scheme" content="light dark">
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const dark=html.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', dark?'dark':'light');
+  }
+  (function(){
+    const pref=localStorage.getItem('sertao-theme');
+    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
+  })();
+</script>
+
+<meta name="description" content="Notícias locais, receitas baianas e espaço para anúncios.">
 </head>
-<body>
-<header class="header">
-  <h1>Sertão News</h1>
-  <p>Notícias locais de <strong>Paulo Afonso (BA)</strong> e <strong>Delmiro Gouveia (AL)</strong>, receitas baianas e espaço para anúncios.</p>
-  <nav class="nav">
-    <a href="index.html">Início</a>
-    <a href="paulo-afonso.html">Paulo Afonso</a>
-    <a href="delmiro-gouveia.html">Delmiro Gouveia</a>
-    <a href="receitas.html">Receitas</a>
-    <a href="#anuncie">Anuncie</a>
-  </nav>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
+    <nav class="flex gap-4 text-sm">
+      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
+      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+    </nav>
+    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+  </div>
 </header>
-
-<main class="container">
+<main class="max-w-6xl mx-auto px-4 space-y-10 py-6">
+  <section class="relative">
+  <img src="hero.svg" alt="" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-sm"/>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="backdrop-blur-sm bg-black/30 rounded-xl px-6 py-4">
+      <h1 class="text-3xl md:text-5xl font-bold text-white drop-shadow">Sertão News</h1>
+      <p class="text-white/90 mt-2">Paulo Afonso (BA) • Delmiro Gouveia (AL)</p>
+    </div>
+  </div>
+</section>
   <section>
-    <h2>Últimas (11–12/08/2025)</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Agosto Dourado: ações de incentivo ao aleitamento</h3>
-        <p class="meta">Paulo Afonso — 12/08/2025</p>
-        <p><a class="btn" href="paulo-afonso.html#agosto-dourado">Ler no Sertão News</a></p>
-      </article>
-
-      <article class="card">
-        <h3>5ª Conferência Territorial de Políticas para as Mulheres</h3>
-        <p class="meta">Paulo Afonso — 12/08/2025</p>
-        <p><a class="btn" href="paulo-afonso.html#conferencia-mulheres">Ler no Sertão News</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Jogos Estudantis voltam após mais de 10 anos</h3>
-        <p class="meta">Delmiro Gouveia — 11/08/2025</p>
-        <p><a class="btn" href="delmiro-gouveia.html#jogos-estudantis">Ler no Sertão News</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Ocorrências policiais — resumo</h3>
-        <p class="meta">Delmiro Gouveia — 11/08/2025</p>
-        <p><a class="btn" href="delmiro-gouveia.html#policia">Ler no Sertão News</a></p>
-      </article>
+    <h2 class="text-xl font-semibold mb-4">Últimas (11–12/08/2025)</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Agosto Dourado</h3><p class="text-sm text-slate-500">Paulo Afonso — 12/08/2025</p><a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#agosto-dourado">Ler</a></article>
+      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">5ª Conferência de Políticas para Mulheres</h3><p class="text-sm text-slate-500">Paulo Afonso — 12/08/2025</p><a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#conferencia-mulheres">Ler</a></article>
+      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Jogos Estudantis retornam</h3><p class="text-sm text-slate-500">Delmiro Gouveia — 11/08/2025</p><a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#jogos-estudantis">Ler</a></article>
+      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Ocorrências policiais</h3><p class="text-sm text-slate-500">Delmiro Gouveia — 11/08/2025</p><a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#policia">Ler</a></article>
     </div>
   </section>
 
-  <section id="anuncie">
-    <h2>Anuncie aqui</h2>
-    <div class="ads">
-      <div class="ad">
-        <h3>Sua loja aqui</h3>
-        <p>Divulgue ofertas e serviços para Paulo Afonso e Delmiro Gouveia.</p>
-        <p class="meta">Contato: WhatsApp (75) 98338-7904</p>
+  <section id="anuncie" class="space-y-4">
+    <h2 class="text-xl font-semibold">Anuncie aqui</h2>
+    <div class="grid gap-4 md:grid-cols-2">
+      <div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+        <img src="ad-shop.svg" alt="" class="w-full h-36 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Sua loja em destaque</h3>
+          <p class="text-sm text-slate-500">Vitrine para Paulo Afonso e Delmiro Gouveia.</p>
+          <p class="text-sm mt-2">Contato: <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">(75) 98338-7904 (WhatsApp)</a></p>
+        </div>
       </div>
-      <div class="ad">
-        <h3>Promo do mês — Lanchonete</h3>
-        <p>Coloque combos, delivery, horário e pagamento (PIX, cartão).</p>
-        <p class="meta">Solicite seu anúncio personalizado.</p>
+      <div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+        <img src="ad-food.svg" alt="" class="w-full h-36 object-cover"/>
+        <div class="p-4">
+          <h3 class="font-semibold">Lanchonete & Delivery</h3>
+          <p class="text-sm text-slate-500">Divulgue combos, horários e pagamento (PIX/cartão).</p>
+          <p class="text-sm mt-2">Planos a partir de R$ 49/semana.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">Planos de Anúncio</h2>
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+        <h3 class="font-semibold">Card Básico</h3>
+        <p class="text-3xl font-bold mt-2">R$ 49<span class="text-base font-normal text-slate-500">/semana</span></p>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
+          <li>1 imagem + texto</li>
+          <li>Link para WhatsApp</li>
+          <li>Posição rotativa</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow ring-2 ring-sky-500">
+        <h3 class="font-semibold">Destaque</h3>
+        <p class="text-3xl font-bold mt-2">R$ 99<span class="text-base font-normal text-slate-500">/semana</span></p>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
+          <li>Card ampliado</li>
+          <li>Topo da página</li>
+          <li>CTA personalizado</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+        <h3 class="font-semibold">Patrocinador do Mês</h3>
+        <p class="text-3xl font-bold mt-2">R$ 299<span class="text-base font-normal text-slate-500">/mês</span></p>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
+          <li>Banner no hero</li>
+          <li>Post dedicado</li>
+          <li>Menção nas redes</li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-sm text-slate-500">Fechar agora pelo WhatsApp: <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">(75) 98338-7904</a></p>
+  </section>
+
 </main>
-
-<footer class="footer">© 2025 Sertão News</footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
 </body>
 </html>

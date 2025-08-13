@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<title>Paulo Afonso — Sertão News</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Paulo Afonso — Sertão News</title>
-<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="hero.svg"/>
+<meta name="color-scheme" content="light dark">
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const dark=html.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', dark?'dark':'light');
+  }
+  (function(){
+    const pref=localStorage.getItem('sertao-theme');
+    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
+  })();
+</script>
+
 </head>
-<body>
-<header class="header">
-  <h1>Paulo Afonso (BA)</h1>
-  <nav class="nav">
-    <a href="index.html">Início</a>
-    <a href="paulo-afonso.html">Paulo Afonso</a>
-    <a href="delmiro-gouveia.html">Delmiro Gouveia</a>
-    <a href="receitas.html">Receitas</a>
-  </nav>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
+    <nav class="flex gap-4 text-sm">
+      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
+      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+    </nav>
+    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+  </div>
 </header>
-<main class="container">
+<main class="max-w-4xl mx-auto px-4 py-8 space-y-6">
+  <article id="agosto-dourado" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+    <h1 class="text-2xl font-bold">Agosto Dourado: ações de incentivo ao aleitamento</h1>
+    <p class="text-sm text-slate-500 mt-1">Publicado 12/08/2025 • Fonte: Prefeitura de Paulo Afonso</p>
+    <p class="mt-4">Rodas de conversa, orientação e atividades de apoio à amamentação ocorrem durante todo o mês.</p>
+    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://pauloafonso.ba.gov.br/">Fonte oficial</a>
+  </article>
 
-<article id="agosto-dourado" class="article">
-  <h2>Agosto Dourado: Secretaria de Saúde intensifica ações de incentivo ao aleitamento</h2>
-  <p class="meta">Publicado: 12/08/2025 • Fonte: Prefeitura de Paulo Afonso</p>
-  <p>A campanha traz rodas de conversa, orientação e atividades de apoio à amamentação ao longo de agosto.</p>
-  <p class="source"><a href="https://pauloafonso.ba.gov.br/" target="_blank" rel="noopener">Ler a fonte oficial</a></p>
-</article>
-
-<article id="conferencia-mulheres" class="article">
-  <h2>Paulo Afonso sedia 5ª Conferência Territorial de Políticas para as Mulheres</h2>
-  <p class="meta">Publicado: 12/08/2025 • Fonte: Prefeitura de Paulo Afonso</p>
-  <p>Evento reuniu representantes de municípios do território para discutir igualdade, combate à violência e políticas públicas.</p>
-  <p class="source"><a href="https://pauloafonso.ba.gov.br/inicio/" target="_blank" rel="noopener">Ler a fonte oficial</a></p>
-</article>
-
+  <article id="conferencia-mulheres" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+    <h2 class="text-2xl font-bold">5ª Conferência Territorial de Políticas para as Mulheres</h2>
+    <p class="text-sm text-slate-500 mt-1">Publicado 12/08/2025 • Fonte: Prefeitura de Paulo Afonso</p>
+    <p class="mt-4">Debates sobre igualdade, combate à violência e políticas públicas com representantes do território.</p>
+    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://pauloafonso.ba.gov.br/inicio/">Fonte oficial</a>
+  </article>
 </main>
-<footer class="footer">© 2025 Sertão News</footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
 </body>
 </html>

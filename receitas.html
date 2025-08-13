@@ -1,96 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<title>Receitas Baianas — Sertão News</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Receitas Baianas — Sertão News</title>
-<link rel="stylesheet" href="style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="hero.svg"/>
+<meta name="color-scheme" content="light dark">
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const dark=html.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', dark?'dark':'light');
+  }
+  (function(){
+    const pref=localStorage.getItem('sertao-theme');
+    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
+  })();
+</script>
+
 </head>
-<body>
-<header class="header">
-  <h1>Receitas Baianas</h1>
-  <nav class="nav">
-    <a href="index.html">Início</a>
-    <a href="paulo-afonso.html">Paulo Afonso</a>
-    <a href="delmiro-gouveia.html">Delmiro Gouveia</a>
-    <a href="receitas.html">Receitas</a>
-  </nav>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
+    <nav class="flex gap-4 text-sm">
+      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
+      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+    </nav>
+    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+  </div>
 </header>
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+  <section class="grid md:grid-cols-2 gap-6">
+    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img class="w-full h-40 object-cover" src="recipe-acaraje.svg" alt="Acarajé ilustrado"/>
+      <div class="p-5">
+        <h2 class="text-xl font-bold">Acarajé</h2>
+        <h3 class="mt-3 font-semibold">Ingredientes</h3>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>500 g feijão-fradinho; 1 cebola; sal; dendê para fritar.</li>
+          <li>Recheio: vatapá, camarão seco, salada, pimenta (opcional).</li>
+        </ul>
+        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
+        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Descasque o feijão, bata com cebola e sal até massa grossa.</li>
+          <li>Modele e frite no dendê quente.</li>
+          <li>Abra e recheie.</li>
+        </ol>
+      </div>
+    </article>
 
-<main class="container recipes">
+    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img class="w-full h-40 object-cover" src="recipe-moqueca.svg" alt="Moqueca baiana ilustrada"/>
+      <div class="p-5">
+        <h2 class="text-xl font-bold">Moqueca Baiana</h2>
+        <h3 class="mt-3 font-semibold">Ingredientes</h3>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>1 kg peixe em postas; limão; sal; alho.</li>
+          <li>1 cebola; 1 pimentão; 2 tomates; coentro; pimenta-de-cheiro.</li>
+          <li>200 ml leite de coco; 2 c.s. dendê; 2 c.s. azeite.</li>
+        </ul>
+        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
+        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Marine o peixe 30 min.</li>
+          <li>Camadas em panela de barro; regue com dendê e azeite.</li>
+          <li>Some leite de coco no final; fogo baixo até cozinhar.</li>
+        </ol>
+      </div>
+    </article>
 
-  <section class="recipe">
-    <img alt="Acarajé" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Acaraj%C3%A9_com_vatap%C3%A1.jpg/640px-Acaraj%C3%A9_com_vatap%C3%A1.jpg"/>
-    <div>
-      <h2>Acarajé</h2>
-      <h3>Ingredientes</h3>
-      <ul>
-        <li>500 g de feijão-fradinho; 1 cebola; sal; azeite de dendê para fritar.</li>
-        <li>Recheio: vatapá, camarão seco, salada e pimenta (opcional).</li>
-      </ul>
-      <h3>Modo de preparo</h3>
-      <ol>
-        <li>Descasque o feijão, bata com cebola e sal até formar massa grossa.</li>
-        <li>Molde bolinhos e frite no dendê quente.</li>
-        <li>Abra e recheie com vatapá, camarão e salada.</li>
-      </ol>
-    </div>
+    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img class="w-full h-40 object-cover" src="recipe-vatapa.svg" alt="Vatapá ilustrado"/>
+      <div class="p-5">
+        <h2 class="text-xl font-bold">Vatapá</h2>
+        <h3 class="mt-3 font-semibold">Ingredientes</h3>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Camarão seco, amendoim, castanha, farinha de pão.</li>
+          <li>Leite de coco, dendê, água; alho, cebola, pimentão, coentro, sal.</li>
+        </ul>
+        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
+        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Bata secos e legumes; leve ao fogo com leite de coco e dendê.</li>
+          <li>Misture até engrossar.</li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img class="w-full h-40 object-cover" src="recipe-caruru.svg" alt="Caruru ilustrado"/>
+      <div class="p-5">
+        <h2 class="text-xl font-bold">Caruru</h2>
+        <h3 class="mt-3 font-semibold">Ingredientes</h3>
+        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Quiabo, camarão seco, amendoim, castanha.</li>
+          <li>Cebola, gengibre, dendê, água, sal.</li>
+        </ul>
+        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
+        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
+          <li>Refogue cebola no dendê; cozinhe o quiabo.</li>
+          <li>Junte pasta de camarão/amendoim/castanha; mexa até engrossar.</li>
+        </ol>
+      </div>
+    </article>
   </section>
-
-  <section class="recipe">
-    <img alt="Moqueca baiana" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Muqueca_Baiana.jpg/640px-Muqueca_Baiana.jpg"/>
-    <div>
-      <h2>Moqueca Baiana</h2>
-      <h3>Ingredientes</h3>
-      <ul>
-        <li>1 kg de peixe em postas, suco de 1 limão, sal, alho.</li>
-        <li>1 cebola, 1 pimentão, 2 tomates, coentro e pimenta-de-cheiro.</li>
-        <li>200 ml de leite de coco; 2 col. (sopa) de dendê; 2 col. (sopa) azeite.</li>
-      </ul>
-      <h3>Modo de preparo</h3>
-      <ol>
-        <li>Marine o peixe com limão, sal e alho por 30 min.</li>
-        <li>Em panela de barro, faça camadas de peixe e legumes; regue com dendê e azeite.</li>
-        <li>Coe coco com água quente (leite de coco) e junte no final; cozinhe em fogo baixo ~40 min.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="recipe">
-    <img alt="Vatapá" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Vatap%C3%A1.jpg/640px-Vatap%C3%A1.jpg"/>
-    <div>
-      <h2>Vatapá</h2>
-      <h3>Ingredientes</h3>
-      <ul>
-        <li>2 xíc. camarão seco; 1½ xíc. amendoim; 1½ xíc. castanha; 2 xíc. farinha de pão.</li>
-        <li>1 xíc. dendê; 1 xíc. leite de coco; 3 xíc. água; alho, cebola, pimentão, coentro, sal.</li>
-      </ul>
-      <h3>Modo de preparo</h3>
-      <ol>
-        <li>Bata camarão, amendoim e castanha até virar farinha; bata legumes com água.</li>
-        <li>Leve ao fogo com leite de coco e dendê, mexendo até engrossar.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="recipe">
-    <img alt="Caruru" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Caruru.jpg/640px-Caruru.jpg"/>
-    <div>
-      <h2>Caruru</h2>
-      <h3>Ingredientes</h3>
-      <ul>
-        <li>600 g de quiabo em rodelas; ¼ xíc. camarão seco; 1 xíc. amendoim; 1¼ xíc. castanha.</li>
-        <li>1 cebola; 2 col. (sopa) gengibre; 2 col. (sopa) dendê; 1½ xíc. água; sal.</li>
-      </ul>
-      <h3>Modo de preparo</h3>
-      <ol>
-        <li>Refogue cebola no dendê; junte o quiabo e cozinhe até reduzir a baba.</li>
-        <li>Bata camarão/amendoim/castanha com água; some ao quiabo com gengibre; mexa até engrossar.</li>
-      </ol>
-    </div>
-  </section>
-
 </main>
-<footer class="footer">© 2025 Sertão News</footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
 </body>
 </html>
