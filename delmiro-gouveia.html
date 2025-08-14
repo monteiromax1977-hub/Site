@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<title>Delmiro Gouveia — Sertão News</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Delmiro Gouveia — Sertão News</title>
+<meta name="description" content="Cobertura própria de Delmiro Gouveia (AL).">
 <link rel="icon" href="hero.svg"/>
+<link rel="canonical" href="https://seusite.com/delmiro-gouveia.html"/>
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Sertão News">
+<meta property="og:title" content="Delmiro Gouveia — Sertão News">
+<meta property="og:description" content="Cobertura própria de Delmiro Gouveia (AL).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seusite.com/delmiro-gouveia.html">
+<meta property="og:image" content="https://seusite.com/hero.svg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delmiro Gouveia — Sertão News">
+<meta name="twitter:description" content="Cobertura própria de Delmiro Gouveia (AL).">
+<meta name="twitter:image" content="https://seusite.com/hero.svg">
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
+
+<!-- Meta Pixel (substitua PIXEL_ID) -->
+<script>
+  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics (substitua G-XXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
 <script>
   function toggleTheme(){
     const html=document.documentElement;
@@ -28,33 +71,33 @@
       <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
       <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
       <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
-      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
     </nav>
     <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
   </div>
 </header>
 <main class="max-w-4xl mx-auto px-4 py-8 space-y-6">
-  <article id="jogos-estudantis" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
-    <h1 class="text-2xl font-bold">Jogos Estudantis voltam após mais de uma década</h1>
-    <p class="text-sm text-slate-500 mt-1">Publicado 11/08/2025 • Fonte: Tribuna Hoje</p>
-    <p class="mt-4">Cerca de 1.300 alunos da rede municipal participam do retorno dos jogos estudantis.</p>
-    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://tribunahoje.com/noticias/esportes/2025/08/11/163658-delmiro-gouveia-revive-os-jogos-estudantis-municipais-apos-mais-de-uma-decada">Ler a fonte</a>
+
+  <article id="feira-agricultura" class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow">
+    <h1 class="text-2xl font-bold">Alto Sertão recebe feira da agricultura familiar</h1>
+    <p class="text-sm text-slate-500 mt-1">Delmiro Gouveia — 14/08/2025</p>
+    <p class="mt-4">Edição regional do circuito de feiras chega à cidade com estandes de produtores de leite e derivados, orgânicos, mel e artesanato. A programação inclui apresentação cultural e ações de cadastro para programas de compras governamentais.</p>
+    <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
+      <li>Local: praça central, a partir das 8h.</li>
+      <li>Entrada gratuita.</li>
+      <li>Espaço para economia solidária e cooperativas.</li>
+    </ul>
+    <p class="mt-3 text-xs text-slate-400">Redação Sertão News: pauta construída a partir do calendário estadual.</p>
   </article>
 
-  <article id="policia" class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
-    <h2 class="text-2xl font-bold">Ocorrências policiais — resumo</h2>
-    <p class="text-sm text-slate-500 mt-1">Publicado 11/08/2025 • Fonte: AL1/PM-AL</p>
-    <p class="mt-4">Prisões registradas no interior, incluindo Delmiro Gouveia; um homem de 69 anos foi preso por mandado judicial.</p>
-    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://al1.com.br/noticias/noticias/169010-pm-al-registra-prisoes-em-porto-real-do-colegio-penedo-delmiro-gouveia-e-mata-grande">Ler a fonte</a>
+  <article id="caso-kelly" class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow">
+    <h2 class="text-2xl font-bold">Caso Kelly Kethylin: inquérito concluído</h2>
+    <p class="text-sm text-slate-500 mt-1">Sertão de AL — 13/08/2025</p>
+    <p class="mt-4">A Polícia Civil de Alagoas finalizou o inquérito que apura o desaparecimento e homicídio de uma adolescente ocorrido no fim de junho. Quatro suspeitos foram identificados; dois estão presos, um morreu em confronto e outro segue foragido. O relatório foi encaminhado ao Ministério Público.</p>
+    <p class="mt-3 text-xs text-slate-400">Redação Sertão News: síntese própria a partir de informações policiais.</p>
   </article>
 
-  <article class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
-    <h2 class="text-2xl font-bold">Boletim local (manchetes)</h2>
-    <p class="text-sm text-slate-500 mt-1">Atualizado 12/08/2025 • Fonte: Correio Notícia</p>
-    <p class="mt-4">Resumo de ocorrências e trânsito na região nas últimas horas.</p>
-    <a class="text-sky-600 inline-block mt-2" target="_blank" rel="noopener" href="https://correionoticia.com.br/">Ver manchetes</a>
-  </article>
 </main>
-<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
 </body>
 </html>

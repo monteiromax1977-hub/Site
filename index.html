@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-<title>Sertão News — Paulo Afonso & Delmiro Gouveia</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Sertão News — Paulo Afonso & Delmiro Gouveia</title>
+<meta name="description" content="Cobertura própria do sertão baiano e alagoano, receitas e anúncios locais.">
 <link rel="icon" href="hero.svg"/>
+<link rel="canonical" href="https://seusite.com/index.html"/>
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Sertão News">
+<meta property="og:title" content="Sertão News — Paulo Afonso & Delmiro Gouveia">
+<meta property="og:description" content="Cobertura própria do sertão baiano e alagoano, receitas e anúncios locais.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seusite.com/index.html">
+<meta property="og:image" content="https://seusite.com/hero.svg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sertão News — Paulo Afonso & Delmiro Gouveia">
+<meta name="twitter:description" content="Cobertura própria do sertão baiano e alagoano, receitas e anúncios locais.">
+<meta name="twitter:image" content="https://seusite.com/hero.svg">
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
+
+<!-- Meta Pixel (substitua PIXEL_ID) -->
+<script>
+  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics (substitua G-XXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
 <script>
   function toggleTheme(){
     const html=document.documentElement;
@@ -19,7 +62,6 @@
   })();
 </script>
 
-<meta name="description" content="Notícias locais, receitas baianas e espaço para anúncios.">
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
 <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
@@ -29,66 +71,91 @@
       <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
       <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
       <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
-      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
     </nav>
     <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
   </div>
 </header>
 <main class="max-w-6xl mx-auto px-4 space-y-10 py-6">
   <section class="relative">
-  <img src="hero.svg" alt="" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-sm"/>
+  <img src="hero.svg" alt="" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-sm"/>
   <div class="absolute inset-0 flex items-center justify-center">
-    <div class="backdrop-blur-sm bg-black/30 rounded-xl px-6 py-4">
+    <div class="backdrop-blur-sm bg-black/30 rounded-2xl px-6 py-4">
       <h1 class="text-3xl md:text-5xl font-bold text-white drop-shadow">Sertão News</h1>
       <p class="text-white/90 mt-2">Paulo Afonso (BA) • Delmiro Gouveia (AL)</p>
     </div>
   </div>
 </section>
-  <section>
-    <h2 class="text-xl font-semibold mb-4">Últimas (11–12/08/2025)</h2>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Agosto Dourado</h3><p class="text-sm text-slate-500">Paulo Afonso — 12/08/2025</p><a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#agosto-dourado">Ler</a></article>
-      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">5ª Conferência de Políticas para Mulheres</h3><p class="text-sm text-slate-500">Paulo Afonso — 12/08/2025</p><a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#conferencia-mulheres">Ler</a></article>
-      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Jogos Estudantis retornam</h3><p class="text-sm text-slate-500">Delmiro Gouveia — 11/08/2025</p><a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#jogos-estudantis">Ler</a></article>
-      <article class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow"><h3 class="font-semibold">Ocorrências policiais</h3><p class="text-sm text-slate-500">Delmiro Gouveia — 11/08/2025</p><a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#policia">Ler</a></article>
+
+  <section aria-labelledby="ultimas">
+    <div class="flex items-end justify-between">
+      <h2 id="ultimas" class="text-xl font-semibold">Últimas — Edição 12/08/2025</h2>
+      <p class="text-sm text-slate-500">Apuração local • sem links externos</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-4">
+      <article class="bg-white dark:bg-slate-900 rounded-2xl p-4 shadow">
+        <h3 class="font-semibold">Agosto Dourado movimenta rede de saúde</h3>
+        <p class="text-sm text-slate-500">Paulo Afonso — 12/08</p>
+        <p class="text-sm mt-2">Unidades realizam rodas de conversa e salas de apoio à amamentação ao longo do mês.</p>
+        <a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#agosto-dourado">Ler</a>
+      </article>
+      <article class="bg-white dark:bg-slate-900 rounded-2xl p-4 shadow">
+        <h3 class="font-semibold">Conferência Territorial reúne gestoras e movimentos</h3>
+        <p class="text-sm text-slate-500">Paulo Afonso — 12/08</p>
+        <p class="text-sm mt-2">Relatos de políticas para mulheres, com propostas prioritárias para 2025–2026.</p>
+        <a class="inline-block mt-2 text-sky-600" href="paulo-afonso.html#conferencia-mulheres">Ler</a>
+      </article>
+      <article class="bg-white dark:bg-slate-900 rounded-2xl p-4 shadow">
+        <h3 class="font-semibold">Alto Sertão terá feira da agricultura familiar</h3>
+        <p class="text-sm text-slate-500">Delmiro Gouveia — 14/08</p>
+        <p class="text-sm mt-2">Produtores locais expõem orgânicos, queijos e artesanato na praça central.</p>
+        <a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#feira-agricultura">Ler</a>
+      </article>
+      <article class="bg-white dark:bg-slate-900 rounded-2xl p-4 shadow">
+        <h3 class="font-semibold">Caso Kelly Kethylin: inquérito é concluído</h3>
+        <p class="text-sm text-slate-500">Sertão de AL — 13/08</p>
+        <p class="text-sm mt-2">PC-AL aponta quatro suspeitos e envia relatório ao MP.</p>
+        <a class="inline-block mt-2 text-sky-600" href="delmiro-gouveia.html#caso-kelly">Ler</a>
+      </article>
     </div>
   </section>
 
   <section id="anuncie" class="space-y-4">
     <h2 class="text-xl font-semibold">Anuncie aqui</h2>
     <div class="grid gap-4 md:grid-cols-2">
-      <div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
         <img src="ad-shop.svg" alt="" class="w-full h-36 object-cover"/>
-        <div class="p-4">
+        <div class="p-5">
           <h3 class="font-semibold">Sua loja em destaque</h3>
           <p class="text-sm text-slate-500">Vitrine para Paulo Afonso e Delmiro Gouveia.</p>
-          <p class="text-sm mt-2">Contato: <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">(75) 98338-7904 (WhatsApp)</a></p>
+          <p class="text-sm mt-2">WhatsApp: <strong>(75) 98338-7904</strong></p>
         </div>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
         <img src="ad-food.svg" alt="" class="w-full h-36 object-cover"/>
-        <div class="p-4">
-          <h3 class="font-semibold">Lanchonete & Delivery</h3>
+        <div class="p-5">
+          <h3 class="font-semibold">Lanchonetes & Delivery</h3>
           <p class="text-sm text-slate-500">Divulgue combos, horários e pagamento (PIX/cartão).</p>
           <p class="text-sm mt-2">Planos a partir de R$ 49/semana.</p>
         </div>
       </div>
     </div>
+    <p class="text-sm">Quer anunciar? <a class="text-sky-600 underline" href="anuncie.html">Preencha o formulário</a>.</p>
   </section>
 
   <section class="space-y-4">
     <h2 class="text-xl font-semibold">Planos de Anúncio</h2>
     <div class="grid gap-4 md:grid-cols-3">
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow">
         <h3 class="font-semibold">Card Básico</h3>
         <p class="text-3xl font-bold mt-2">R$ 49<span class="text-base font-normal text-slate-500">/semana</span></p>
         <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
           <li>1 imagem + texto</li>
-          <li>Link para WhatsApp</li>
+          <li>Contato via WhatsApp</li>
           <li>Posição rotativa</li>
         </ul>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow ring-2 ring-sky-500">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow ring-2 ring-sky-500">
         <h3 class="font-semibold">Destaque</h3>
         <p class="text-3xl font-bold mt-2">R$ 99<span class="text-base font-normal text-slate-500">/semana</span></p>
         <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
@@ -97,20 +164,18 @@
           <li>CTA personalizado</li>
         </ul>
       </div>
-      <div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-5 shadow">
         <h3 class="font-semibold">Patrocinador do Mês</h3>
         <p class="text-3xl font-bold mt-2">R$ 299<span class="text-base font-normal text-slate-500">/mês</span></p>
         <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 mt-3">
-          <li>Banner no hero</li>
+          <li>Banner no topo (hero)</li>
           <li>Post dedicado</li>
           <li>Menção nas redes</li>
         </ul>
       </div>
     </div>
-    <p class="text-sm text-slate-500">Fechar agora pelo WhatsApp: <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">(75) 98338-7904</a></p>
   </section>
-
 </main>
-<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anuncie — Sertão News</title>
+<meta name="description" content="Planos, contato e formulário de anúncio via WhatsApp.">
+<link rel="icon" href="hero.svg"/>
+<link rel="canonical" href="https://seusite.com/anuncie.html"/>
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Sertão News">
+<meta property="og:title" content="Anuncie — Sertão News">
+<meta property="og:description" content="Planos, contato e formulário de anúncio via WhatsApp.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seusite.com/anuncie.html">
+<meta property="og:image" content="https://seusite.com/hero.svg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anuncie — Sertão News">
+<meta name="twitter:description" content="Planos, contato e formulário de anúncio via WhatsApp.">
+<meta name="twitter:image" content="https://seusite.com/hero.svg">
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<meta name="color-scheme" content="light dark">
+
+<!-- Meta Pixel (substitua PIXEL_ID) -->
+<script>
+  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics (substitua G-XXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const dark=html.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', dark?'dark':'light');
+  }
+  (function(){
+    const pref=localStorage.getItem('sertao-theme');
+    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
+  })();
+</script>
+
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
+    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
+    <nav class="flex gap-4 text-sm">
+      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
+      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
+    </nav>
+    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+  </div>
+</header>
+<main class="max-w-3xl mx-auto px-4 py-10 space-y-6">
+  <h1 class="text-3xl font-bold">Anuncie no Sertão News</h1>
+  <p class="text-slate-600 dark:text-slate-300">Preencha os dados e clique em enviar: vamos abrir seu WhatsApp com a mensagem pronta.</p>
+
+  <form class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow space-y-4" onsubmit="return openWhatsApp(event)">
+    <div>
+      <label class="block text-sm font-medium mb-1">Nome</label>
+      <input class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2" id="nome" required>
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-1">Negócio</label>
+      <input class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2" id="negocio" placeholder="Loja, lanchonete, serviço..." required>
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-1">Plano</label>
+      <select class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2" id="plano">
+        <option>Card Básico (R$ 49/semana)</option>
+        <option>Destaque (R$ 99/semana)</option>
+        <option>Patrocinador do Mês (R$ 299/mês)</option>
+      </select>
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-1">Mensagem</label>
+      <textarea class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2" id="mensagem" rows="4" placeholder="Links de redes, endereço, horários..."></textarea>
+    </div>
+    <button class="px-4 py-2 rounded-md bg-sky-600 text-white">Enviar pelo WhatsApp</button>
+  </form>
+
+  <script>
+    function openWhatsApp(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const neg = document.getElementById('negocio').value.trim();
+      const plano = document.getElementById('plano').value;
+      const msg = document.getElementById('mensagem').value.trim();
+      const full = `Olá, sou ${nome} do ${neg}. Quero anunciar no Sertão News. Plano: ${plano}. Detalhes: ${msg}`;
+      const url = "https://wa.me/5575983387904?text=" + encodeURIComponent(full);
+      window.location.href = url;
+      return false;
+    }
+  </script>
+
+  <p class="text-sm text-slate-500">Ou chame direto: <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">(75) 98338-7904</a></p>
+
+</main>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News</footer>
+</body>
+</html>

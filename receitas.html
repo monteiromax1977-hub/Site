@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<title>Receitas Baianas — Sertão News</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Receitas Baianas — Sertão News</title>
+<meta name="description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
 <link rel="icon" href="hero.svg"/>
+<link rel="canonical" href="https://seusite.com/receitas.html"/>
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Sertão News">
+<meta property="og:title" content="Receitas Baianas — Sertão News">
+<meta property="og:description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seusite.com/receitas.html">
+<meta property="og:image" content="https://seusite.com/hero.svg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Receitas Baianas — Sertão News">
+<meta name="twitter:description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
+<meta name="twitter:image" content="https://seusite.com/hero.svg">
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
+
+<!-- Meta Pixel (substitua PIXEL_ID) -->
+<script>
+  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics (substitua G-XXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
 <script>
   function toggleTheme(){
     const html=document.documentElement;
@@ -28,14 +71,14 @@
       <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
       <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
       <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
-      <a class="hover:text-sky-600" href="index.html#anuncie">Anuncie</a>
+      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
     </nav>
     <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
   </div>
 </header>
 <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
   <section class="grid md:grid-cols-2 gap-6">
-    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
       <img class="w-full h-40 object-cover" src="recipe-acaraje.svg" alt="Acarajé ilustrado"/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Acarajé</h2>
@@ -53,7 +96,7 @@
       </div>
     </article>
 
-    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
       <img class="w-full h-40 object-cover" src="recipe-moqueca.svg" alt="Moqueca baiana ilustrada"/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Moqueca Baiana</h2>
@@ -72,7 +115,7 @@
       </div>
     </article>
 
-    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
       <img class="w-full h-40 object-cover" src="recipe-vatapa.svg" alt="Vatapá ilustrado"/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Vatapá</h2>
@@ -89,7 +132,7 @@
       </div>
     </article>
 
-    <article class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
       <img class="w-full h-40 object-cover" src="recipe-caruru.svg" alt="Caruru ilustrado"/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Caruru</h2>
@@ -107,6 +150,6 @@
     </article>
   </section>
 </main>
-<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • <a class="text-sky-600 underline" href="https://wa.me/5575983387904" target="_blank" rel="noopener">Anuncie via WhatsApp</a></footer>
+<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
 </body>
 </html>
