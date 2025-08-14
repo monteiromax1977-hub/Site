@@ -5,66 +5,161 @@
 <title>Paulo Afonso — Sertão News</title>
 <meta name="description" content="Jornal do sertão baiano e alagoano: manchetes, reportagens próprias, serviços e anúncios.">
 <link rel="icon" href="hero.svg"/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Merriweather:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Tailwind via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-<meta name="color-scheme" content="light dark">
 <script>
-  function toggleTheme(){{
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serifBody: ['EB Garamond', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+          serifHead: ['Merriweather', 'Georgia', 'serif'],
+        }
+      }
+    }
+  }
+</script>
+
+<meta name="color-scheme" content="light dark">
+
+<!-- Meta Pixel (substitua PIXEL_ID) -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics (substitua G-XXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+<script>
+  function toggleTheme(){
     const d=document.documentElement.classList.toggle('dark');
     localStorage.setItem('sertao-theme', d?'dark':'light');
-  }}
-  (function(){{
+  }
+  (function(){
     const pref=localStorage.getItem('sertao-theme');
     if(pref==='dark') document.documentElement.classList.add('dark');
-  }})();
+  })();
+
+  // Data/hora automáticas (America/Bahia)
+  function formatBahiaDate(date){
+    return new Intl.DateTimeFormat('pt-BR', {
+      weekday: 'long', day: '2-digit', month: 'long', year: 'numeric',
+      timeZone: 'America/Bahia'
+    }).format(date);
+  }
+  function timeBahia(date){
+    return new Intl.DateTimeFormat('pt-BR', {
+      hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Bahia'
+    }).format(date);
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const now = new Date();
+    const el = document.getElementById('databar');
+    if(el){ el.textContent = formatBahiaDate(now) + ' — Paulo Afonso, BA'; }
+    document.querySelectorAll('[data-updated]').forEach(x => {
+      x.textContent = 'Atualizado às ' + timeBahia(now);
+    });
+  });
+
+  // Busca simples: filtra cards pelo título
+  function doSearch(q){
+    const cards = document.querySelectorAll('[data-article-card]');
+    let visible = 0;
+    cards.forEach(card => {
+      const title = card.getAttribute('data-title') || '';
+      const ok = title.toLowerCase().includes(q.toLowerCase());
+      card.style.display = ok ? '' : 'none';
+      if(ok) visible++;
+    });
+    const hit = document.getElementById('hits');
+    if(hit){ hit.textContent = q ? (visible + ' resultado(s)') : ''; }
+  }
 </script>
+
+<style>
+  /* Tipografia: títulos com Merriweather, corpo com EB Garamond */
+  h1,h2,h3,h4,h5,.font-head { font-family: 'Merriweather', Georgia, serif; }
+  body,.font-body { font-family: 'EB Garamond', Georgia, Cambria, 'Times New Roman', serif; }
+</style>
 </head>
-<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<body class="bg-neutral-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body">
 <header class="border-b bg-white/95 dark:bg-slate-900/80 backdrop-blur sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex items-center justify-between py-3">
-      <a href="index.html" class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Sertão <span class="text-sky-600">News</span></a>
-      <div class="hidden md:flex gap-4 text-sm">
+      <a href="index.html" class="text-[28px] font-black tracking-tight text-slate-900 dark:text-white"><span class="font-head">Sertão</span> <span class="text-sky-600 font-head">News</span></a>
+      <nav class="hidden md:flex gap-5 text-sm font-medium font-body">
         <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
         <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro</a>
         <a class="hover:text-sky-600" href="brasil.html">Brasil</a>
         <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
         <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <input type="search" placeholder="Buscar no Sertão News" oninput="doSearch(this.value)"
+          class="hidden md:block w-72 px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 outline-none font-body"/>
+        <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
       </div>
-      <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
     </div>
   </div>
   <div class="border-t bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
-    <div class="max-w-6xl mx-auto px-4 py-2 text-sm flex gap-6 overflow-x-auto">
-      <span class="font-semibold">Últimas:</span>
-      <span>Agosto Dourado mobiliza rede — PA</span>
-      <span>Feira da agricultura — Delmiro 14/08</span>
-      <span>Caso Kelly: inquérito concluído</span>
-      <span>Copa Vela: medidas ambientais</span>
+    <div class="max-w-6xl mx-auto px-4 py-2 text-sm flex items-center gap-6 overflow-x-auto font-body">
+      <span id="databar" class="whitespace-nowrap"></span>
+      <span class="font-semibold ml-auto hidden md:inline">Últimas:</span>
+      <span class="hidden md:inline">Agosto Dourado mobiliza rede — PA</span>
+      <span class="hidden md:inline">Feira da agricultura — Delmiro 14/08</span>
+      <span class="hidden md:inline">Caso Kelly: inquérito concluído</span>
+      <span class="hidden md:inline">Copa Vela: medidas ambientais</span>
     </div>
   </div>
 </header>
-<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
 
+  <nav class="text-sm text-slate-500 mb-3 flex items-center gap-2 font-body"><a class="hover:underline" href="index.html">Início</a><span class="text-slate-400">›</span><a class="hover:underline" href="paulo-afonso.html">Paulo Afonso</a><span class="text-slate-400">›</span><span class="text-slate-500">Agosto Dourado</span></nav>
   <article id="agosto-dourado" class="prose prose-slate dark:prose-invert max-w-none">
-    <h1>Agosto Dourado: ações reforçam apoio à amamentação</h1>
-    <p><strong>Paulo Afonso — 12/08/2025.</strong> Unidades básicas e maternidade programaram rodas de conversa, salas de apoio e distribuição de material informativo. A campanha segue até 31/08, com ações itinerantes em bairros e povoados.</p>
-    <ul>
-      <li>Atividades nas UBSs e na rede hospitalar.</li>
-      <li>Foco em aleitamento exclusivo até 6 meses.</li>
-      <li>Capacitações para agentes comunitários.</li>
-    </ul>
-    <p class="text-sm text-slate-500">Redação Sertão News.</p>
+    <h1 class="font-head">Agosto Dourado: ações reforçam apoio à amamentação</h1>
+    <p><strong>Paulo Afonso — 12/08/2025</strong> • <span data-updated></span></p>
+    <p>Unidades básicas e maternidade programaram rodas de conversa, salas de apoio e distribuição de material informativo. A campanha segue até 31/08, com ações itinerantes em bairros e povoados.</p>
   </article>
-  <hr class="my-6 border-slate-200 dark:border-slate-800"/>
+  <hr class="my-8"/>
+  <nav class="text-sm text-slate-500 mb-3 flex items-center gap-2 font-body"><a class="hover:underline" href="index.html">Início</a><span class="text-slate-400">›</span><a class="hover:underline" href="paulo-afonso.html">Paulo Afonso</a><span class="text-slate-400">›</span><span class="text-slate-500">Conferência Territorial</span></nav>
   <article id="conferencia-mulheres" class="prose prose-slate dark:prose-invert max-w-none">
-    <h2>Conferência Territorial discute prioridades para mulheres</h2>
-    <p><strong>Paulo Afonso — 12/08/2025.</strong> Participação de conselhos e movimentos define propostas para 2025–2026; relatório final sai na próxima semana.</p>
+    <h2 class="font-head">Conferência Territorial discute prioridades para mulheres</h2>
+    <p><strong>Paulo Afonso — 12/08/2025</strong> • <span data-updated></span></p>
+    <p>Representantes apresentaram propostas sobre enfrentamento à violência, autonomia econômica e saúde da mulher.</p>
   </article>
-  <hr class="my-6 border-slate-200 dark:border-slate-800"/>
+  <hr class="my-8"/>
+  <nav class="text-sm text-slate-500 mb-3 flex items-center gap-2 font-body"><a class="hover:underline" href="index.html">Início</a><span class="text-slate-400">›</span><a class="hover:underline" href="paulo-afonso.html">Paulo Afonso</a><span class="text-slate-400">›</span><span class="text-slate-500">Copa Vela</span></nav>
   <article id="copa-vela" class="prose prose-slate dark:prose-invert max-w-none">
-    <h2>Copa Vela: recomendação ambiental do MP</h2>
-    <p><strong>Paulo Afonso — 13/08/2025.</strong> Reforço na limpeza, gestão de resíduos e sinalização nas áreas sensíveis do Complexo dos Lagos. Organização afirma adequações em andamento.</p>
+    <h2 class="font-head">Copa Vela: recomendação ambiental do MP</h2>
+    <p><strong>Paulo Afonso — 13/08/2025</strong> • <span data-updated></span></p>
+    <p>Reforço na limpeza, gestão de resíduos e sinalização em áreas sensíveis do Complexo dos Lagos.</p>
   </article>
+  <nav class="flex items-center justify-center gap-2 mt-6 text-sm font-body" aria-label="Paginação">
+  <a href="#" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700 text-slate-500 pointer-events-none opacity-50">Anterior</a>
+  <a href="#" class="px-3 py-1 rounded bg-slate-900 text-white dark:bg-white dark:text-slate-900">1</a>
+  <a href="#" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700">2</a>
+  <a href="#" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700">3</a>
+  <a href="#" class="px-3 py-1 rounded border border-slate-300 dark:border-slate-700">Próxima</a>
+</nav>
 
 </main>
 <footer class="py-8 text-center text-slate-500 border-t">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
