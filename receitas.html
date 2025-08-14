@@ -1,155 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
+<head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Receitas Baianas — Sertão News</title>
-<meta name="description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
+<title>Receitas — Sertão News</title>
+<meta name="description" content="Jornal do sertão baiano e alagoano: manchetes, reportagens próprias, serviços e anúncios.">
 <link rel="icon" href="hero.svg"/>
-<link rel="canonical" href="https://seusite.com/receitas.html"/>
-<meta name="robots" content="index,follow">
-
-<!-- Open Graph -->
-<meta property="og:site_name" content="Sertão News">
-<meta property="og:title" content="Receitas Baianas — Sertão News">
-<meta property="og:description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://seusite.com/receitas.html">
-<meta property="og:image" content="https://seusite.com/hero.svg">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Receitas Baianas — Sertão News">
-<meta name="twitter:description" content="Acarajé, moqueca, vatapá e caruru — com ilustrações.">
-<meta name="twitter:image" content="https://seusite.com/hero.svg">
-
-<!-- Tailwind via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
-
-<!-- Meta Pixel (substitua PIXEL_ID) -->
 <script>
-  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'PIXEL_ID');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
-<!-- Google Analytics (substitua G-XXXXXXX) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
-
-<script>
-  function toggleTheme(){
-    const html=document.documentElement;
-    const dark=html.classList.toggle('dark');
-    localStorage.setItem('sertao-theme', dark?'dark':'light');
-  }
-  (function(){
+  function toggleTheme(){{
+    const d=document.documentElement.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', d?'dark':'light');
+  }}
+  (function(){{
     const pref=localStorage.getItem('sertao-theme');
-    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
-  })();
+    if(pref==='dark') document.documentElement.classList.add('dark');
+  }})();
 </script>
-
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
-    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
-    <nav class="flex gap-4 text-sm">
-      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
-      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
-      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
-      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
-    </nav>
-    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="border-b bg-white/95 dark:bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between py-3">
+      <a href="index.html" class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Sertão <span class="text-sky-600">News</span></a>
+      <div class="hidden md:flex gap-4 text-sm">
+        <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+        <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro</a>
+        <a class="hover:text-sky-600" href="brasil.html">Brasil</a>
+        <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+        <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
+      </div>
+      <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+    </div>
+  </div>
+  <div class="border-t bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-2 text-sm flex gap-6 overflow-x-auto">
+      <span class="font-semibold">Últimas:</span>
+      <span>Agosto Dourado mobiliza rede — PA</span>
+      <span>Feira da agricultura — Delmiro 14/08</span>
+      <span>Caso Kelly: inquérito concluído</span>
+      <span>Copa Vela: medidas ambientais</span>
+    </div>
   </div>
 </header>
 <main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+
   <section class="grid md:grid-cols-2 gap-6">
-    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
-      <img class="w-full h-40 object-cover" src="recipe-acaraje.svg" alt="Acarajé ilustrado"/>
+    <article class="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img src="foto-a.svg" class="w-full h-40 object-cover" alt=""/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Acarajé</h2>
-        <h3 class="mt-3 font-semibold">Ingredientes</h3>
-        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>500 g feijão-fradinho; 1 cebola; sal; dendê para fritar.</li>
-          <li>Recheio: vatapá, camarão seco, salada, pimenta (opcional).</li>
-        </ul>
-        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
-        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Descasque o feijão, bata com cebola e sal até massa grossa.</li>
-          <li>Modele e frite no dendê quente.</li>
-          <li>Abra e recheie.</li>
-        </ol>
+        <p>Feijão-fradinho, dendê e recheio de vatapá e camarão seco.</p>
       </div>
     </article>
-
-    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
-      <img class="w-full h-40 object-cover" src="recipe-moqueca.svg" alt="Moqueca baiana ilustrada"/>
+    <article class="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img src="foto-b.svg" class="w-full h-40 object-cover" alt=""/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Moqueca Baiana</h2>
-        <h3 class="mt-3 font-semibold">Ingredientes</h3>
-        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>1 kg peixe em postas; limão; sal; alho.</li>
-          <li>1 cebola; 1 pimentão; 2 tomates; coentro; pimenta-de-cheiro.</li>
-          <li>200 ml leite de coco; 2 c.s. dendê; 2 c.s. azeite.</li>
-        </ul>
-        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
-        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Marine o peixe 30 min.</li>
-          <li>Camadas em panela de barro; regue com dendê e azeite.</li>
-          <li>Some leite de coco no final; fogo baixo até cozinhar.</li>
-        </ol>
+        <p>Peixe em postas com leite de coco, dendê e coentro.</p>
       </div>
     </article>
-
-    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
-      <img class="w-full h-40 object-cover" src="recipe-vatapa.svg" alt="Vatapá ilustrado"/>
+    <article class="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img src="foto-a.svg" class="w-full h-40 object-cover" alt=""/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Vatapá</h2>
-        <h3 class="mt-3 font-semibold">Ingredientes</h3>
-        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Camarão seco, amendoim, castanha, farinha de pão.</li>
-          <li>Leite de coco, dendê, água; alho, cebola, pimentão, coentro, sal.</li>
-        </ul>
-        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
-        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Bata secos e legumes; leve ao fogo com leite de coco e dendê.</li>
-          <li>Misture até engrossar.</li>
-        </ol>
+        <p>Camarão seco, amendoim e castanha; cremoso com dendê.</p>
       </div>
     </article>
-
-    <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow">
-      <img class="w-full h-40 object-cover" src="recipe-caruru.svg" alt="Caruru ilustrado"/>
+    <article class="bg-slate-50 dark:bg-slate-900 rounded-xl overflow-hidden shadow">
+      <img src="foto-b.svg" class="w-full h-40 object-cover" alt=""/>
       <div class="p-5">
         <h2 class="text-xl font-bold">Caruru</h2>
-        <h3 class="mt-3 font-semibold">Ingredientes</h3>
-        <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Quiabo, camarão seco, amendoim, castanha.</li>
-          <li>Cebola, gengibre, dendê, água, sal.</li>
-        </ul>
-        <h3 class="mt-3 font-semibold">Modo de preparo</h3>
-        <ol class="list-decimal list-inside text-sm text-slate-600 dark:text-slate-300">
-          <li>Refogue cebola no dendê; cozinhe o quiabo.</li>
-          <li>Junte pasta de camarão/amendoim/castanha; mexa até engrossar.</li>
-        </ol>
+        <p>Quiabo com pasta de camarão/amendoim/castanha e dendê.</p>
       </div>
     </article>
   </section>
+
 </main>
-<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
+<footer class="py-8 text-center text-slate-500 border-t">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
 </body>
 </html>

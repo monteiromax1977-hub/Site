@@ -1,115 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
+<head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Paulo Afonso — Sertão News</title>
-<meta name="description" content="Cobertura própria de Paulo Afonso (BA).">
+<meta name="description" content="Jornal do sertão baiano e alagoano: manchetes, reportagens próprias, serviços e anúncios.">
 <link rel="icon" href="hero.svg"/>
-<link rel="canonical" href="https://seusite.com/paulo-afonso.html"/>
-<meta name="robots" content="index,follow">
-
-<!-- Open Graph -->
-<meta property="og:site_name" content="Sertão News">
-<meta property="og:title" content="Paulo Afonso — Sertão News">
-<meta property="og:description" content="Cobertura própria de Paulo Afonso (BA).">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://seusite.com/paulo-afonso.html">
-<meta property="og:image" content="https://seusite.com/hero.svg">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Paulo Afonso — Sertão News">
-<meta name="twitter:description" content="Cobertura própria de Paulo Afonso (BA).">
-<meta name="twitter:image" content="https://seusite.com/hero.svg">
-
-<!-- Tailwind via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <meta name="color-scheme" content="light dark">
-
-<!-- Meta Pixel (substitua PIXEL_ID) -->
 <script>
-  /* TODO: substitua 'PIXEL_ID' pelo seu ID real do Meta Pixel */
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'PIXEL_ID');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
-<!-- Google Analytics (substitua G-XXXXXXX) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
-
-<script>
-  function toggleTheme(){
-    const html=document.documentElement;
-    const dark=html.classList.toggle('dark');
-    localStorage.setItem('sertao-theme', dark?'dark':'light');
-  }
-  (function(){
+  function toggleTheme(){{
+    const d=document.documentElement.classList.toggle('dark');
+    localStorage.setItem('sertao-theme', d?'dark':'light');
+  }}
+  (function(){{
     const pref=localStorage.getItem('sertao-theme');
-    if(pref==='dark'){ document.documentElement.classList.add('dark'); }
-  })();
+    if(pref==='dark') document.documentElement.classList.add('dark');
+  }})();
 </script>
-
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-<header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3 justify-between">
-    <a href="index.html" class="font-bold text-sky-600 dark:text-sky-400">Sertão News</a>
-    <nav class="flex gap-4 text-sm">
-      <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
-      <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro Gouveia</a>
-      <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
-      <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
-    </nav>
-    <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+<header class="border-b bg-white/95 dark:bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between py-3">
+      <a href="index.html" class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Sertão <span class="text-sky-600">News</span></a>
+      <div class="hidden md:flex gap-4 text-sm">
+        <a class="hover:text-sky-600" href="paulo-afonso.html">Paulo Afonso</a>
+        <a class="hover:text-sky-600" href="delmiro-gouveia.html">Delmiro</a>
+        <a class="hover:text-sky-600" href="brasil.html">Brasil</a>
+        <a class="hover:text-sky-600" href="receitas.html">Receitas</a>
+        <a class="hover:text-sky-600" href="anuncie.html">Anuncie</a>
+      </div>
+      <button onclick="toggleTheme()" class="text-xs px-3 py-1 rounded-md bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">Tema</button>
+    </div>
+  </div>
+  <div class="border-t bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-2 text-sm flex gap-6 overflow-x-auto">
+      <span class="font-semibold">Últimas:</span>
+      <span>Agosto Dourado mobiliza rede — PA</span>
+      <span>Feira da agricultura — Delmiro 14/08</span>
+      <span>Caso Kelly: inquérito concluído</span>
+      <span>Copa Vela: medidas ambientais</span>
+    </div>
   </div>
 </header>
-<main class="max-w-4xl mx-auto px-4 py-8 space-y-6">
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-6">
 
-  <article id="agosto-dourado" class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow">
-    <h1 class="text-2xl font-bold">Agosto Dourado: ações reforçam apoio à amamentação</h1>
-    <p class="text-sm text-slate-500 mt-1">Paulo Afonso — 12/08/2025</p>
-    <p class="mt-4">Unidades básicas e maternidade programaram rodas de conversa, salas de apoio e distribuição de material informativo. Profissionais relatam aumento de procura por orientação no início do mês. A campanha segue até 31/08, com ações itinerantes em bairros e povoados.</p>
-    <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
+  <article id="agosto-dourado" class="prose prose-slate dark:prose-invert max-w-none">
+    <h1>Agosto Dourado: ações reforçam apoio à amamentação</h1>
+    <p><strong>Paulo Afonso — 12/08/2025.</strong> Unidades básicas e maternidade programaram rodas de conversa, salas de apoio e distribuição de material informativo. A campanha segue até 31/08, com ações itinerantes em bairros e povoados.</p>
+    <ul>
       <li>Atividades nas UBSs e na rede hospitalar.</li>
       <li>Foco em aleitamento exclusivo até 6 meses.</li>
       <li>Capacitações para agentes comunitários.</li>
     </ul>
-    <p class="mt-3 text-xs text-slate-400">Redação Sertão News: apuração em fontes oficiais e agenda municipal.</p>
+    <p class="text-sm text-slate-500">Redação Sertão News.</p>
   </article>
-
-  <article id="conferencia-mulheres" class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow">
-    <h2 class="text-2xl font-bold">Conferência Territorial discute prioridades para mulheres</h2>
-    <p class="text-sm text-slate-500 mt-1">Paulo Afonso — 12/08/2025</p>
-    <p class="mt-4">Representantes de municípios do Território de Identidade Itaparica apresentaram propostas sobre enfrentamento à violência, autonomia econômica e saúde da mulher. A síntese será encaminhada às instâncias estaduais.</p>
-    <ul class="mt-3 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
-      <li>Plenárias temáticas e leitura de moções.</li>
-      <li>Participação de conselhos e movimentos.</li>
-      <li>Relatório final previsto para a próxima semana.</li>
-    </ul>
-    <p class="mt-3 text-xs text-slate-400">Redação Sertão News: cobertura local com base na programação oficial.</p>
+  <hr class="my-6 border-slate-200 dark:border-slate-800"/>
+  <article id="conferencia-mulheres" class="prose prose-slate dark:prose-invert max-w-none">
+    <h2>Conferência Territorial discute prioridades para mulheres</h2>
+    <p><strong>Paulo Afonso — 12/08/2025.</strong> Participação de conselhos e movimentos define propostas para 2025–2026; relatório final sai na próxima semana.</p>
   </article>
-
-  <article id="copa-vela" class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow">
-    <h2 class="text-2xl font-bold">Copa Vela: MP recomenda medidas ambientais</h2>
-    <p class="text-sm text-slate-500 mt-1">Paulo Afonso — 13/08/2025</p>
-    <p class="mt-4">O Ministério Público da Bahia expediu recomendações para reduzir impactos durante a Copa Vela 2025, incluindo gestão de resíduos no Complexo dos Lagos, reforço na limpeza e sinalização de áreas sensíveis. A organização afirmou que adequações estão em andamento.</p>
-    <p class="mt-3 text-xs text-slate-400">Redação Sertão News: documento público analisado e resumido.</p>
+  <hr class="my-6 border-slate-200 dark:border-slate-800"/>
+  <article id="copa-vela" class="prose prose-slate dark:prose-invert max-w-none">
+    <h2>Copa Vela: recomendação ambiental do MP</h2>
+    <p><strong>Paulo Afonso — 13/08/2025.</strong> Reforço na limpeza, gestão de resíduos e sinalização nas áreas sensíveis do Complexo dos Lagos. Organização afirma adequações em andamento.</p>
   </article>
 
 </main>
-<footer class="py-8 text-center text-slate-500">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
+<footer class="py-8 text-center text-slate-500 border-t">© 2025 Sertão News • WhatsApp (75) 98338-7904</footer>
 </body>
 </html>
