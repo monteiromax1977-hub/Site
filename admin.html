@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin — Sertão News</title>
+<link rel="icon" href="hero.svg"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<meta name="color-scheme" content="light dark">
+<style>
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+  textarea,input,select { outline: none; }
+</style>
+<script>
+function downloadJSON(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function parseLines(text) {
+  return text.split('\n').map(x => x.trim()).filter(Boolean);
+}
+
+async function loadExisting() {
+  // tenta carregar arquivos existentes para pré-preencher
+  try { const r = await fetch('live.json', {cache:'no-store'}); const j = await r.json();
+    document.getElementById('ticker').value = (j.ticker||[]).join('\n');
+    document.getElementById('city-pa').value = (j.city && j.city['paulo-afonso']||[]).join('\n');
+    document.getElementById('city-dg').value = (j.city && j.city['delmiro-gouveia']||[]).join('\n');
+  } catch(e){}
+  try { const r = await fetch('boletim.json', {cache:'no-store'}); const j = await r.json();
+    const area = document.getElementById('boletim');
+    area.value = j.map(x => `${x.cidade} | ${x.hora} | ${x.titulo} | ${x.detalhe}`).join('\n');
+  } catch(e){}
+  try { const r = await fetch('settings.json', {cache:'no-store'}); const s = await r.json();
+    document.getElementById('pixel').value = s.pixel_id || '';
+    document.getElementById('ga').value = s.ga_id || '';
+  } catch(e){}
+}
+
+function gerarLive() {
+  const data = {
+    updated_at: new Date().toISOString(),
+    ticker: parseLines(document.getElementById('ticker').value),
+    city: {
+      "paulo-afonso": parseLines(document.getElementById('city-pa').value),
+      "delmiro-gouveia": parseLines(document.getElementById('city-dg').value)
+    }
+  };
+  downloadJSON('live.json', data);
+}
+
+function gerarBoletim() {
+  const linhas = parseLines(document.getElementById('boletim').value);
+  const items = linhas.map(l => {
+    const [cidade,hora,titulo,detalhe] = l.split('|').map(x => (x||'').trim());
+    return {cidade, hora, titulo, detalhe};
+  }).filter(x => x.cidade && x.hora && x.titulo);
+  downloadJSON('boletim.json', items);
+}
+
+function gerarSettings() {
+  const s = {
+    pixel_id: document.getElementById('pixel').value.trim(),
+    ga_id: document.getElementById('ga').value.trim()
+  };
+  downloadJSON('settings.json', s);
+}
+
+document.addEventListener('DOMContentLoaded', loadExisting);
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <main class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <header class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold">Admin — Sertão News</h1>
+      <a href="index.html" class="text-sky-600">Voltar ao site</a>
+    </header>
+
+    <section class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow space-y-3">
+      <h2 class="font-semibold text-lg">Ao vivo (live.json)</h2>
+      <label class="block text-sm text-slate-500">Ticker (uma linha por item)</label>
+      <textarea id="ticker" rows="4" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2"></textarea>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm text-slate-500">Paulo Afonso — notas (uma por linha)</label>
+          <textarea id="city-pa" rows="3" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm text-slate-500">Delmiro Gouveia — notas (uma por linha)</label>
+          <textarea id="city-dg" rows="3" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2"></textarea>
+        </div>
+      </div>
+      <button onclick="gerarLive()" class="mt-2 inline-block px-4 py-2 rounded-md bg-sky-700 text-white">Baixar live.json</button>
+    </section>
+
+    <section class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow space-y-3">
+      <h2 class="font-semibold text-lg">Boletim de Ocorrências (boletim.json)</h2>
+      <label class="block text-sm text-slate-500">Formato: cidade | hora | título | detalhe (uma ocorrência por linha)</label>
+      <textarea id="boletim" rows="6" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2"></textarea>
+      <button onclick="gerarBoletim()" class="mt-2 inline-block px-4 py-2 rounded-md bg-sky-700 text-white">Baixar boletim.json</button>
+    </section>
+
+    <section class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow space-y-3">
+      <h2 class="font-semibold text-lg">IDs de Meta Pixel / Google Analytics (settings.json)</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm text-slate-500">Meta Pixel ID</label>
+          <input id="pixel" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2" placeholder="ex.: 123456789012345">
+        </div>
+        <div>
+          <label class="block text-sm text-slate-500">Google Analytics (GA4) ID</label>
+          <input id="ga" class="w-full rounded-md border border-slate-300 dark:border-slate-700 bg-transparent p-2" placeholder="ex.: G-AB12C3D4E5">
+        </div>
+      </div>
+      <button onclick="gerarSettings()" class="mt-2 inline-block px-4 py-2 rounded-md bg-sky-700 text-white">Baixar settings.json</button>
+      <p class="text-sm text-slate-500">Suba o arquivo gerado para a mesma pasta do site (raiz) no Vercel para ativar imediatamente.</p>
+    </section>
+  </main>
+</body>
+</html>

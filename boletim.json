@@ -1,0 +1,20 @@
+[
+  {
+    "cidade": "Paulo Afonso",
+    "hora": "14:10",
+    "titulo": "Apreensão de som automotivo irregular",
+    "detalhe": "Equipe de fiscalização atuou na área central; equipamento recolhido."
+  },
+  {
+    "cidade": "Delmiro Gouveia",
+    "hora": "13:40",
+    "titulo": "Mandado cumprido durante abordagem",
+    "detalhe": "Foragido localizado e conduzido à Delegacia de Delmiro."
+  },
+  {
+    "cidade": "Bahia/AL",
+    "hora": "12:05",
+    "titulo": "BR-423 com retenção leve",
+    "detalhe": "Trecho com manutenção; reduzir velocidade."
+  }
+]
